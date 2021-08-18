@@ -1,19 +1,18 @@
 
 import firebase from 'firebase'
 const firebaseConfig = {
-  apiKey: "AIzaSyCHnwzcsQOzLgRL8JeaZNn3DZ7qiOGGJSU",
-  authDomain: "south-telaviv.firebaseapp.com",
-  databaseURL: "https://south-telaviv-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "south-telaviv",
-  storageBucket: "south-telaviv.appspot.com",
-  messagingSenderId: "208578303962",
-  appId: "1:208578303962:web:62a7f3aada0d3358a7d2e3"
+  apiKey: "AIzaSyBniyLIYg33CnfB_NRJAP5KOg10qiWw4aE",
+  authDomain: "geo-loaction-6334d.firebaseapp.com",
+  projectId: "geo-loaction-6334d",
+  storageBucket: "geo-loaction-6334d.appspot.com",
+  messagingSenderId: "844835440612",
+  appId: "1:844835440612:web:a5014650f0e5988c1d29f1"
 };
-const firebaseApp=firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig)
 
-const fireDB=firebaseApp.firestore();
+const fireDB = firebaseApp.firestore();
 
-const storage =firebase.storage()
+const storage = firebase.storage()
 
 export{
     fireDB,storage
