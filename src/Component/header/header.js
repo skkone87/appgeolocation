@@ -10,7 +10,8 @@ const Header = () => {
             <Toolbar className={classes.toolbar}>
                 <Typography variant="h5">
                 <Typed
-                            style={{ color: "tomato" }}
+                className="typed"
+    
                             strings={["Hello","Wellcom to NEVE-SHAANAN","Explore  NEVE-SHAANAN Restaurants"]}
                             typeSpeed={40}
                             backSpeed={60}

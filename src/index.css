@@ -11,10 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.typed{
+  color: tomato;
+}
 @media (max-width:"786px"){
   .paperMedia{
     width: 100%;
     
+  }
+  .typed{
+    font-size: 6px;
+  }
+}
+
+@media (max-width:786px){
+  
+  .typed{
+    font-size: 16px;
   }
 }
 /* a{
