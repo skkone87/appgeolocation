@@ -60,3 +60,12 @@ input::placeholder, textarea::placeholder{
   background-color: tomato;
   cursor: pointer;
 }
+.display-flex{
+  z-index: 3 !important;
+  display: flex !important;
+}
+@media (max-width:768px){
+  .mapboxgl-map{
+    display: flex !important;
+  }
+}

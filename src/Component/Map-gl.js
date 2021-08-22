@@ -1,12 +1,9 @@
 
-import * as React from 'react';
+import  React from 'react';
 import { useState,useEffect } from 'react';
-import ReactMapGL, {GeolocateControl, Marker, Popup} from 'react-map-gl';
-import RoomIcon from '@material-ui/icons/Room';
-import { red } from '@material-ui/core/colors';
+import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 import InfoFile from './InfoFile';
 import './style.css'
-import { Room, Star, Cancel, Place } from "@material-ui/icons"
 import makeid from '../Component/help/function'
 import firebase from 'firebase'
 import { storage, fireDB } from './firebase';
@@ -14,16 +11,18 @@ import useStyles  from '../Component/styles'
 import { Paper, Typography } from '@material-ui/core'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import LocationOnOutLineIcon from '@material-ui/icons/LocationOnOutlined'
-import Rating from '@material-ui/lab/Rating'
 import { CssBaseline, Grid } from '@material-ui/core'
 import Header from '../Component/header/header'
 import List from '../Component/list/list' 
+import "react-popupbox/dist/react-popupbox.css"
+import LocationOnIcon from '@material-ui/icons/LocationOn'
+import Phone from '@material-ui/icons/Phone'
+import {
+  PopupboxManager,
+  PopupboxContainer
+} from 'react-popupbox';
 
 
-const geolocateControlStyle= {
-  right: 10,
-  top: 10
-};
 
 function Map() {
   const [viewport, setViewport] = useState({
@@ -117,9 +116,45 @@ function Map() {
     })
        
 }, [])
+
+ const openPopupbox=(p)=> {
+ 
+  const content = (
+<div style={{width:"300px"}}>
+      
+      <Paper elevation={3} style={{width:"300px"}}className="paperMedia" >
+                  <img src={p.photoUrl} alt={p.title} className={classes.pointer}
+                  style={{width:"100%",objectFit:"cover"}}
+                  />
+                   <Typography className={classes.Typography} variant="subtitle2" gutterBottom
+                  style={{padding:"4px", display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}
+                  >
+                                                <a href={`tel:${p.phone}`}><Phone /> </a> <a className={classes.phoneCall} href={`tel:${p.phone}`}> {`Phone: ${p.phone}`}</a>
+                  </Typography>
+                  <Typography className={classes.Typography} variant="subtitle2" gutterBottom
+                  style={{padding:"4px", display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}
+                  >
+                             <LocationOnIcon />{`Nave shaana ${p.address}`}
+                  </Typography>
+                </Paper>
+</div>
+  )
+  PopupboxManager.open({
+    content,
+    config: {
+      titleBar: {
+        enable: true,
+        text: p.title
+      },
+      fadeIn: true,
+      fadeInSpeed: 500
+    }
+  })
+
+}
   
   return (
-    <>
+    <div>
     <CssBaseline/>
     <Header/>
     <Grid container spacing={3} style={{ width: "100%" }}>
@@ -143,7 +178,7 @@ function Map() {
                >
               
               {!isDesktop ? (
-                <LocationOnOutLineIcon color="primary" fontSize="large" className={classes.pointer} />
+                <LocationOnOutLineIcon color="primary" fontSize="large" className={classes.pointer} onClick={()=>openPopupbox(p)} />
               ) :
                 <Paper elevation={3} className={classes.paper}>
                   <Typography className={classes.Typography} variant="subtitle2" gutterBottom>
@@ -152,13 +187,13 @@ function Map() {
                   <img src={p.photoUrl} alt={p.title} className={classes.pointer}
                   style={{width:"70px",objectFit:"cover"}}
                   
-                
+                onClick={()=>openPopupbox(p)}
                   />
                 </Paper>
               }
 
             </Marker>
-            
+            <PopupboxContainer />
           </div>
         ))}
        {showPopup && <Popup
@@ -220,7 +255,7 @@ function Map() {
    
 
     
-   </> 
+   </div> 
   );
  
 }

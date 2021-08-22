@@ -1,23 +1,33 @@
 import React from 'react'
-import { Box, Typography, Button, Card, CardMedia, CardContent, CardActions, Chip } from '@material-ui/core'
+import { Typography, Card, CardMedia, CardContent } from '@material-ui/core'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import Phone from '@material-ui/icons/Phone'
 import Rating from '@material-ui/lab/Rating'
 import useStyles from './styles'
-import { Star } from "@material-ui/icons"
+import {
+
+    FacebookShareButton,
+    LinkedinShareButton,
+    FacebookIcon,
+    WhatsappShareButton,
+    WhatsappIcon,
+    LinkedinIcon
 
 
 
-const Details = ({ place,selected,refProp }) => {
+} from "react-share";
+
+
+const Details = ({ place, selected, refProp }) => {
     const classes = useStyles()
 
-    if(selected){
-        refProp?.current ?.scrollIntoView({behavior:"smooth",block: "start"})
-    } 
+    if (selected) {
+        refProp.current.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
     return (
         <Card elevation={6} key={place._id}>
             <CardMedia style={{ height: 350, paddingTop: '56.25%' }}
-                image={place?.photoUrl}
+                image={place.photoUrl}
                 title={place.title}
             />
             <CardContent>
@@ -25,24 +35,45 @@ const Details = ({ place,selected,refProp }) => {
                     {place.title}
                 </Typography>
                 <Typography variant='subtitle2' color='textSecondary'>{place.desc}</Typography>
-                {place?.address && (
+                {place.address && (
                     <Typography gutterBottom variant='body2' color='textSecondary' className={classes.subtitle}>
-                        <LocationOnIcon/>{`Nave shaana ${place.address}`}
+                        <LocationOnIcon />{`Nave shaana ${place.address}`}
                     </Typography>
-                    
-                )}  
-                
-                {place?.phone && (
+
+                )}
+
+                {place.phone && (
                     <Typography gutterBottom variant='body2' color='textSecondary' className={classes.subtitle}>
-                        <Phone/>{`Phone: ${place.phone}`}
-                    </Typography>   
-                    )}  
+                        <a href={`tel:${place.phone}`}><Phone /> </a> <a className={classes.phoneCall} href={`tel:${place.phone}`}> {`Phone: ${place.phone}`}</a>
+                    </Typography>
+                )}
+                < FacebookShareButton
+                style={{margin:"8px"}}
+                    url={place.photoUrl}
+                    quote={'#Explore  NEVE-SHAANAN Restaurants'}
+                    hashtag={place.title}
+                >
+                    < FacebookIcon size='23' />
+                </FacebookShareButton>
+                < LinkedinShareButton
+                   style={{margin:"8px"}}
+                    url={place.photoUrl}
+                    quote={'#Explore  NEVE-SHAANAN Restaurants'}
+                    hashtag={place.title}
+                >
+                    < LinkedinIcon size='23' />
+                </ LinkedinShareButton>
+                < WhatsappShareButton
+                   style={{margin:"8px"}}
+                    url={place.photoUrl}
+                    quote={'#Explore  NEVE-SHAANAN Restaurants'}
+                    hashtag={place.title}
+                >
+                    < WhatsappIcon size='23' />
+                </ WhatsappShareButton>
             </CardContent>
-            {/* <div className="stars">
-            {Array(place.rating).fill(<Star className="star"/>)}
-             </div>  */}
-             <Rating  size ="small" value={place.rating}/>
-             
+            <Rating size="small" value={place.rating} />
+
         </Card>
     )
 }
