@@ -25,12 +25,13 @@ import {
 
 
 function Map() {
+  const isDesktop = useMediaQuery('(min-width:600px)')
   const [viewport, setViewport] = useState({
     width: "100%",
-    height: "100%",
+    height: "100vh",
     latitude:32.05731492215807,
     longitude: 34.780587354714925,
-    zoom:18
+    zoom:17
   });
   const [showPopup, togglePopup] = React.useState(false);
   const [newPlace,setNewPlace] = useState("")
@@ -41,7 +42,6 @@ function Map() {
   const [phone, setPhone] = useState(null)
   const [desc, setDesc] = useState(null)
   const [places, setPlaces] = useState([])
-  const isDesktop = useMediaQuery('(min-width:600px)')
   const classes = useStyles()
   const latClick=(e)=>{
     console.log(e)
@@ -155,14 +155,13 @@ function Map() {
   
   return (
     <div>
-    <CssBaseline/>
+    {/* <CssBaseline/> */}
     <Header/>
     <Grid container spacing={3} style={{ width: "100%" }}>
-        <Grid item xs={12} md={4}>
-          <List  places={places} />
-        </Grid>
+       
         <Grid item xs={12} md={8}>
         <ReactMapGL
+        className="mapTitle"
       {...viewport}
       mapboxApiAccessToken="pk.eyJ1IjoiZWxoYWQiLCJhIjoiY2tzNml0NzFmMTNucDJ2cGh4bWQ5YndtNiJ9.RWDtw6EM9BQ1Q-KTID_q9A"
       mapStyle="mapbox://styles/elhad/ckshtr4pe24zr17s30kruj00h"
@@ -250,6 +249,9 @@ function Map() {
 
     </ReactMapGL>
 
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <List  places={places} />
         </Grid>
       </Grid>
    

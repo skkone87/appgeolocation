@@ -9,8 +9,7 @@ const List = ({places}) => {
    
     return (
         <div className={classes.container}>
-            <Typography variant='h5'>Restaurants around you</Typography>
-           
+            <Typography variant='h5' className="typed marginTop">Restaurants around you</Typography>
                 <div>
             <FormControl className={classes.formControl}>
             </FormControl>

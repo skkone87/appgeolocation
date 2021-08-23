@@ -14,9 +14,21 @@ code {
 .typed{
   color: tomato;
 }
+@media (max-width:786px){
+  
+  .mapTitle{
+    height: 60vh !important;
+    margin-top: 5px !important;
+    margin-right: 5px!important;
+    margin-left: 5px !important;
+  }
+}
 @media (max-width:"786px"){
   .paperMedia{
     width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
     
   }
   .typed{
@@ -29,7 +41,8 @@ code {
   .typed{
     font-size: 16px;
   }
+  .marginTop{
+margin-top: -300px !important;
+
+  }
 }
-/* a{
-  text-decoration: none;
-} */

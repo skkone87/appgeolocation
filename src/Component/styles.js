@@ -1,8 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
   paper: {
-    padding: '4px', display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '76px',
+    padding: '4px', display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100px',
   },
   mapContainer: {
     height: '105vh', width: '100%',
@@ -16,5 +16,14 @@ export default makeStyles(() => ({
   phoneCall:{
     textDecoration:'none',
     
-  }
+  },
+  title: {
+   
+    [theme.breakpoints.up('sm')]: {
+        display: 'block',
+        width:"100%",
+        
+        
+    },
+},
 }));

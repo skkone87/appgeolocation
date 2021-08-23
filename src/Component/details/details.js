@@ -58,7 +58,7 @@ const Details = ({ place, selected, refProp }) => {
                 < LinkedinShareButton
                    style={{margin:"8px"}}
                     url={place.photoUrl}
-                    quote={'#Explore  NEVE-SHAANAN Restaurants'}
+                    quote={place.title}
                     hashtag={place.title}
                 >
                     < LinkedinIcon size='23' />
@@ -66,8 +66,8 @@ const Details = ({ place, selected, refProp }) => {
                 < WhatsappShareButton
                    style={{margin:"8px"}}
                     url={place.photoUrl}
-                    quote={'#Explore  NEVE-SHAANAN Restaurants'}
-                    hashtag={place.title}
+                    quote={place.title}
+                    
                 >
                     < WhatsappIcon size='23' />
                 </ WhatsappShareButton>
