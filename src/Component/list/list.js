@@ -11,10 +11,6 @@ const List = ({places}) => {
         <div className={classes.container}>
             <Typography variant='h5' className="typed marginTop">Restaurants around you</Typography>
                 <div>
-            <FormControl className={classes.formControl}>
-            </FormControl>
-            <FormControl className={classes.formControl}>
-            </FormControl>
             <Grid container spacing={3} className={classes.list}>
                 {places.map((place, i) => (
                     <Grid item key={i} xs={12}>

@@ -124,7 +124,7 @@ function Map() {
       
       <Paper elevation={3} style={{width:"300px"}}className="paperMedia" >
                   <img src={p.photoUrl} alt={p.title} className={classes.pointer}
-                  style={{width:"100%",objectFit:"cover"}}
+                  style={{width:"100%",objectFit:"cover",marginRight:"10px"}}
                   />
                    <Typography className={classes.Typography} variant="subtitle2" gutterBottom
                   style={{padding:"4px", display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}
@@ -166,7 +166,7 @@ function Map() {
       mapboxApiAccessToken="pk.eyJ1IjoiZWxoYWQiLCJhIjoiY2tzNml0NzFmMTNucDJ2cGh4bWQ5YndtNiJ9.RWDtw6EM9BQ1Q-KTID_q9A"
       mapStyle="mapbox://styles/elhad/ckshtr4pe24zr17s30kruj00h"
       onViewportChange={nextViewport => setViewport(nextViewport)
-      }
+       }
       onDblClick={latClick}
       
     >
@@ -183,8 +183,8 @@ function Map() {
                   <Typography className={classes.Typography} variant="subtitle2" gutterBottom>
                     {p.title}
                   </Typography>
-                  <img src={p.photoUrl} alt={p.title} className={classes.pointer}
-                  style={{width:"70px",objectFit:"cover"}}
+                  <img src={p.photoUrl} alt={p.title}
+                  style={{width:"100%",objectFit:"cover"}}
                   
                 onClick={()=>openPopupbox(p)}
                   />
