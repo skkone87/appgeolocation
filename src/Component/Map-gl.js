@@ -17,6 +17,7 @@ import List from '../Component/list/list'
 import "react-popupbox/dist/react-popupbox.css"
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import Phone from '@material-ui/icons/Phone'
+import RestaurantTwoToneIcon from '@material-ui/icons/RestaurantTwoTone';
 import {
   PopupboxManager,
   PopupboxContainer
@@ -177,8 +178,18 @@ function Map() {
                >
               
               {!isDesktop ? (
-                <LocationOnOutLineIcon color="primary" fontSize="large" className={classes.pointer} onClick={()=>openPopupbox(p)} />
-              ) :
+              
+              <div>
+                <div className="mapContainer">
+                <LocationOnOutLineIcon color="primary" fontSize="1000px" className={classes.pointer} onClick={()=>openPopupbox(p)}
+                />
+                <RestaurantTwoToneIcon className="restaurantMark" fontSize="12px"/>
+                </div>
+              <p style={{fontSize:"12px",marginTop:"-10px",color:"red"}}>{p.title}</p>
+                </div>
+         
+                
+              ):
                 <Paper elevation={3} className={classes.paper}>
                   <Typography className={classes.Typography} variant="subtitle2" gutterBottom>
                     {p.title}

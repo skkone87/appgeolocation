@@ -13,6 +13,7 @@ export default makeStyles((theme) => ({
   pointer: {
     cursor: 'pointer',
     
+    
   },
   Typography:{
     fontSize:"7px",
