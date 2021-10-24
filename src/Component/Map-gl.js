@@ -22,6 +22,7 @@ import {
   PopupboxManager,
   PopupboxContainer
 } from 'react-popupbox';
+import SearchBar from './SearchBar';
 
 
 
@@ -158,7 +159,9 @@ function Map() {
     <div>
     <CssBaseline/>
     {/* <Header/> */}
+    <SearchBar/>
     <Grid container spacing={3} style={{ width: "100%" }}>
+    
        
         <Grid item xs={12} md={8}>
         <ReactMapGL
