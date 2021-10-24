@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   paper: {
-    padding: '4px', display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '55px',
+    padding: '4px', display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '70px',
   },
   mapContainer: {
     height: '105vh', width: '100%',

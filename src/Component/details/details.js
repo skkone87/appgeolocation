@@ -35,8 +35,34 @@ const Details = ({ place, selected, refProp }) => {
                     {place.title}
                 </Typography>
                 <Typography variant='subtitle2' color='textSecondary'>{place.desc}</Typography>
+                <Typography variant='h3' color='textSecondary' style={{textAlign:'center'}}>Menu</Typography>
+                <div className={classes.menu}>
+                    <img className={classes.imageMenu} 
+                    src="https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/eggs-breakfast-avocado-1296x728-header.jpg?w=1155&h=1528"
+                    alt="" />
+                    <Typography gutterBottom variant='body2' color='secondary' className={classes.subtitle}>
+                       Salad
+                    </Typography>
+                </div>
+                <div className={classes.menu}>
+                    <img className={classes.imageMenu} 
+                    src="https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/eggs-breakfast-avocado-1296x728-header.jpg?w=1155&h=1528"
+                    alt="" />
+                    <Typography gutterBottom variant='body2' color='secondary' className={classes.subtitle}>
+                       Salad
+                    </Typography>
+                </div>
+                <div className={classes.menu}>
+                    <img className={classes.imageMenu} 
+                    src="https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/eggs-breakfast-avocado-1296x728-header.jpg?w=1155&h=1528"
+                    alt="" />
+                    <Typography gutterBottom variant='body2' color='secondary'className={classes.subtitle}>
+                       Salad
+                    </Typography>
+                </div>
+                <a href="#" style={{marginTop:"4px"}}>more</a>
                 {place.address && (
-                    <Typography gutterBottom variant='body2' color='textSecondary' className={classes.subtitle}>
+                    <Typography gutterBottom variant='body2' color='secondary' className={classes.subtitle}>
                         <LocationOnIcon />{`Nave shaana ${place.address}`}
                     </Typography>
 

@@ -14,5 +14,18 @@ export default makeStyles(() => ({
   phoneCall:{
     textDecoration:'none',
     
+  },
+  menu:{
+   display:'flex',
+   justifyContent:"space-between",
+   marginTop:"3px",
+  
+  },
+  imageMenu:{
+    width:'80px',
+    height:'80px',
+    borderRadius:"50%",
+    objectFit:"cover",
   }
+ 
 }));

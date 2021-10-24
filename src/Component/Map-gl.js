@@ -157,7 +157,7 @@ function Map() {
   return (
     <div>
     <CssBaseline/>
-    <Header/>
+    {/* <Header/> */}
     <Grid container spacing={3} style={{ width: "100%" }}>
        
         <Grid item xs={12} md={8}>
@@ -171,7 +171,7 @@ function Map() {
       onDblClick={latClick}
       
     >
-           {places.map(p => (
+           {places&& places.map(p => (
            <div key={p._id}>
 
             <Marker latitude={ p.lat} longitude={p.long} offsetLeft={-viewport.zoom * .7} offsetTop={-viewport.zoom * 2} className={classes.markerContainer}
