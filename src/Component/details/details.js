@@ -3,6 +3,7 @@ import { Typography, Card, CardMedia, CardContent } from '@material-ui/core'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import Phone from '@material-ui/icons/Phone'
 import Rating from '@material-ui/lab/Rating'
+// import Pdf from '../Documents/Document.pdf';
 import useStyles from './styles'
 import {
 
@@ -61,7 +62,10 @@ const Details = ({ place, selected, refProp }) => {
                        Salad
                     </Typography>
                 </div>
-                <a href="#" style={{marginTop:"4px"}}>more</a>
+                {/* <div className="searchfield" onClick={() => window.open("nosh.jpg")}>  */}
+
+                <a href="../../images/nosh.jpg" target="_blank" style={{marginTop:"4px", width:"800px"}} >more</a>
+                 {/* </div>  */}
                 {place.address && (
                     <Typography gutterBottom variant='body2' color='secondary' className={classes.subtitle}>
                         <LocationOnIcon />{`Nave shaana ${place.address}`}
