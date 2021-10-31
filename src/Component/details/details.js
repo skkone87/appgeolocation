@@ -64,7 +64,7 @@ const Details = ({ place, selected, refProp }) => {
                 </div>
                 {/* <div className="searchfield" onClick={() => window.open("nosh.jpg")}>  */}
 
-                <a href="../../images/nosh.jpg" target="_blank" style={{marginTop:"4px", width:"800px"}} >more</a>
+                <a href="../../images/nosh.jpg" target="_blank" style={{marginTop:"4px"}} >more</a>
                  {/* </div>  */}
                 {place.address && (
                     <Typography gutterBottom variant='body2' color='secondary' className={classes.subtitle}>
