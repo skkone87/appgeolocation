@@ -18,6 +18,8 @@ import "react-popupbox/dist/react-popupbox.css"
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import Phone from '@material-ui/icons/Phone'
 import RestaurantTwoToneIcon from '@material-ui/icons/RestaurantTwoTone';
+import MapboxAutocomplete from 'react-mapbox-autocomplete';
+ 
 import {
   PopupboxManager,
   PopupboxContainer
@@ -27,6 +29,11 @@ import SearchBar from './SearchBar';
 
 
 function Map() {
+ 
+   
+  function _suggestionSelect(result, lat, lng, text) {
+    console.log(result, lat, lng, text)
+  }
   const isDesktop = useMediaQuery('(min-width:600px)')
   const [viewport, setViewport] = useState({
     width: "100%",
@@ -174,6 +181,11 @@ function Map() {
       onDblClick={latClick}
       
     >
+      <MapboxAutocomplete publicKey='pk.eyJ1IjoiZWxoYWQiLCJhIjoiY2tzNml0NzFmMTNucDJ2cGh4bWQ5YndtNiJ9.RWDtw6EM9BQ1Q-KTID_q9A'
+                    inputClass='form-control search'
+                    onSuggestionSelect={_suggestionSelect}
+                    country='us'
+                    resetSearch={true}/>
            {places&& places.map(p => (
            <div key={p._id}>
 
