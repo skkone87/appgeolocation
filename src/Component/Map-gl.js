@@ -255,7 +255,7 @@ function Map() {
       <label>Address</label>
       <input type="text" placeholder="Enter a address" onChange={(e) => setAddress(e.target.value)} />
       <label>Phone</label>
-      <input type="text" placeholder="Enter palce phone number" onChange={(e) => setPhone(e.target.value)} />
+      <input type="text" placeholder="Enter place phone number" onChange={(e) => setPhone(e.target.value)} />
       <label>Review</label>
       <textarea placeholder="say something abute this place" onChange={(e) => setDesc(e.target.value)} />
       <label>Rating</label>

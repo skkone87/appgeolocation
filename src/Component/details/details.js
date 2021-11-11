@@ -41,23 +41,25 @@ const Details = ({ place, selected, refProp }) => {
                     <img className={classes.imageMenu} 
                     src="https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/eggs-breakfast-avocado-1296x728-header.jpg?w=1155&h=1528"
                     alt="" />
+                    <h4>45 ILS </h4>
                     <Typography gutterBottom variant='body2' color='secondary' className={classes.subtitle}>
-                       Salad
+                       Mix-Salad
                     </Typography>
                 </div>
                 <div className={classes.menu}>
                     <img className={classes.imageMenu} 
                     src="https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/eggs-breakfast-avocado-1296x728-header.jpg?w=1155&h=1528"
                     alt="" />
-                    <h4>100$</h4>
+                     <h4>  50 ILS </h4>
                     <Typography gutterBottom variant='body2' color='secondary' className={classes.subtitle}>
-                       Salad
+                    Home-made salad
                     </Typography>
                 </div>
                 <div className={classes.menu}>
                     <img className={classes.imageMenu} 
                     src="https://tse1.mm.bing.net/th?id=OIP.ip7p8q5hqaJ-A5JaplxZhgHaFB&pid=Api&P=0&w=277&h=188"
                     alt="" />
+                    <h4>50 ILS </h4>
                     <Typography gutterBottom variant='body2' color='secondary'className={classes.subtitle}>
                        Salad
                     </Typography>
